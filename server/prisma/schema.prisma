@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Config {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique @db.VarChar(100)
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  openid    String    @unique @db.VarChar(100)
+  nickname  String?   @db.VarChar(100)
+  avatarUrl String?   @db.Text
+  phone     String?   @db.VarChar(20)
+  role      Int       @default(0) @db.Int
+  password  String?   @db.VarChar(100)
+  status    Int       @default(1) @db.Int
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  orders Order[]
+
+  @@index([role])
+}
+
+model Order {
+  id           Int       @id @default(autoincrement())
+  orderNo      String    @unique @db.VarChar(50)
+  station      String    @db.VarChar(100)
+  building     String    @db.VarChar(100)
+  room         String?   @db.VarChar(50)
+  storeOrder   String    @unique @db.VarChar(100)
+  pickCode     String?   @db.VarChar(50)
+  packageType  String?   @db.VarChar(20)
+  senderId     Int       @db.Int
+  senderPhone  String?   @db.VarChar(20)
+  status       Int       @default(0) @db.Int
+  verified     Int       @default(0) @db.Int
+  verifiedBy   Int?      @db.Int
+  verifiedAt   DateTime?
+  pickedBy     Int?      @db.Int
+  pickedAt     DateTime?
+  deliveredBy  Int?      @db.Int
+  deliveredAt  DateTime?
+  confirmedAt  DateTime?
+  cancelledAt  DateTime?
+  cancelReason String?   @db.VarChar(500)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  sender User @relation(fields: [senderId], references: [id])
+
+  @@index([building])
+  @@index([status])
+  @@index([station])
+  @@index([createdAt])
+}

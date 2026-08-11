@@ -1,0 +1,35 @@
+{
+  "name": "miniprogram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:weapp": "taro build --type weapp"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^8.0.1",
+    "@babel/preset-env": "^8.0.2",
+    "@babel/preset-react": "^8.0.1",
+    "@babel/preset-typescript": "^8.0.1",
+    "@tarojs/cli": "^4.2.1",
+    "@tarojs/components": "^4.2.1",
+    "@tarojs/plugin-framework-react": "^4.2.1",
+    "@tarojs/plugin-platform-alipay": "^4.2.1",
+    "@tarojs/plugin-platform-h5": "^4.2.1",
+    "@tarojs/plugin-platform-weapp": "^4.2.1",
+    "@tarojs/react": "^4.2.1",
+    "@tarojs/runtime": "^4.2.1",
+    "@tarojs/taro": "^4.2.1",
+    "@tarojs/vite-runner": "^4.2.1",
+    "@vitejs/plugin-react": "^4.0.0",
+    "babel-preset-taro": "^4.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^5.4.21"
+  }
+}

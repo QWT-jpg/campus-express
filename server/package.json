@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "校园快递代拿 - 后端服务",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "build": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:seed": "node prisma/seed.js",
+    "db:setup": "npx prisma db push && node prisma/seed.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@prisma/client": "^6.0.0",
+    "axios": "^1.7.0",
+    "dotenv": "^16.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.15.0",
+    "koa-body": "^6.0.0",
+    "koa-cors": "^0.0.16",
+    "koa-json": "^2.0.2",
+    "koa-mount": "^4.2.0",
+    "koa-router": "^12.0.0",
+    "koa-static": "^5.0.0",
+    "prisma": "^6.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
