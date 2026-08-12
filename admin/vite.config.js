@@ -7,7 +7,7 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://koa-sxg6-295582-8-1466900008.sh.run.tcloudbase.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       }
