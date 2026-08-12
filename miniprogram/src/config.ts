@@ -9,4 +9,4 @@
 
 // 开发环境：本地后端
 // 生产环境：改为 'https://你的域名'
-export const API_BASE_URL = 'http://172.20.10.2:3000'
+export const API_BASE_URL = 'https://koa-sxg6-295582-8-1466900008.sh.run.tcloudbase.com'
